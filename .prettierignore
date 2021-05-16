@@ -1,0 +1,12 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+
+/apps/viva-design/node_modules
+/apps/viva-design/public
+/apps/viva-design/.cache
+
+/apps/gatsby-wordpress-playground/node_modules
+/apps/gatsby-wordpress-playground/public
+/apps/gatsby-wordpress-playground/.cache
