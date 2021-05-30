@@ -1,22 +1,36 @@
 import React from 'react';
 
-import styles from './button.module.scss';
-
-export enum ButtonColor {
-  Primary = 'Primary',
-  Secondary = 'Secondary',
-  Tetriary = 'Tetriary' 
-}
+// export enum ButtonColor {
+//   Primary = 'Primary',
+//   Secondary = 'Secondary',
+//   Tetriary = 'Tetriary' 
+// }
 
 /* eslint-disable-next-line */
 export interface ButtonProps {
-  label: string;
-  color: ButtonColor;
+  border: string;
+  color: string;
+  children?: React.ReactNode;
+  height: string;
+  onClick: () => void;
+  radius: string
+  width: string;
 }
 
 export function Button(props: ButtonProps) {
   return (
-    <button className={ styles.button }>{props.label}</button>
+    <button 
+      onClick={props.onClick}
+      style={{
+         backgroundColor: props.color,
+         border: props.border,
+         borderRadius: props.radius,
+         height: props.height,
+         width: props.width
+      }}
+    >
+      {props.children}
+    </button>
   );
 }
 
