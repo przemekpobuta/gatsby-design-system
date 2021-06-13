@@ -1,18 +1,13 @@
 {
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "npmScope": "gatsby-design-system",
   "tasksRunnerOptions": {
     "default": {
@@ -22,20 +17,22 @@
           "build",
           "lint",
           "test",
-          "e2e"
+          "e2e",
+          "build-storybook"
         ]
       }
     }
   },
   "projects": {
-    "gatsby-wordpress-playground": {
-      "tags": []
-    },
+    "gatsby-wordpress-playground": { "tags": [] },
     "gatsby-wordpress-playground-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "gatsby-wordpress-playground"
-      ]
+      "implicitDependencies": ["gatsby-wordpress-playground"]
+    },
+    "shared-ui-design-system-buttons": { "tags": [] },
+    "shared-ui-design-system-buttons-e2e": {
+      "tags": [],
+      "implicitDependencies": ["shared-ui-design-system-buttons"]
     }
   }
 }
