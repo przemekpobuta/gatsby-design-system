@@ -1,4 +1,4 @@
-import { color, number, text } from '@storybook/addon-knobs';
+import { color, number, select, text } from '@storybook/addon-knobs';
 import React from 'react';
 
 import { Button, ButtonProps } from './button';
@@ -11,7 +11,7 @@ export default {
 export const Simple = () => {
   
   const props: ButtonProps = {
-    border: text('Border', '2px solid #2980b9'),
+    border: number('Border width', 2) + 'px ' +  select('Border style', ['solid', 'dotted', 'dashed'], 'solid') + ' ' + color('Border color', '#2980b9'),
     backgroundColor: color('Background color', '#3498db'),
     color: color('Color', 'white'),
     height: number('Height [px]', 60) + 'px',
