@@ -5,32 +5,32 @@ export interface ButtonProps {
   border?: string;
   color?: string;
   children?: React.ReactNode;
-  height?: string;
+  height?: number;
   onClick?: () => void;
-  radius?: string
-  width?: string;
+  radius?: number;
+  width?: number;
 }
 
 const initProps: ButtonProps = {
   border: '1px solid black',
   backgroundColor: '#3498db',
   color: 'white',
-  height: '100px',
-  radius: '1px',
-  width: '250px'
-}
+  height: 100,
+  radius: 1,
+  width: 250,
+};
 
 export function Button(props = initProps) {
   return (
-    <button 
+    <button
       onClick={props.onClick}
       style={{
-         backgroundColor: props.backgroundColor,
-         border: props.border,
-         color: props.color,
-         borderRadius: props.radius,
-         height: props.height,
-         width: props.width
+        backgroundColor: props.backgroundColor,
+        border: props.border,
+        color: props.color,
+        borderRadius: props.radius + 'px',
+        height: props.height + 'px',
+        width: props.width + 'px',
       }}
     >
       {props.children}

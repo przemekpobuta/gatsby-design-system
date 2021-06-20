@@ -1,33 +1,35 @@
-import { color, number, select, text } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 
 import { Button, ButtonProps } from './button';
 
+import type { Story, Meta } from '../../../.storybook/storybook';
+
 export default {
   component: Button,
-  title: 'Button'
-};
+  title: 'Button',
+  args: {
+    onClick: action('clicked'),
+  },
+  argTypes: {
+    children: { name: 'Label', control: 'text', defaultValue: 'Text value' },
+    backgroundColor: {
+      name: 'Background color',
+      control: 'color',
+      defaultValue: '#3498db',
+    },
+    color: { name: 'Text color', control: 'color', defaultValue: '#ffffff' },
+    height: { name: 'Height', control: 'number', defaultValue: 60 },
+    width: { name: 'Width', control: 'number', defaultValue: 200 },
+    radius: { name: 'Radius', control: 'number', defaultValue: 100 },
+    border: {
+      name: 'Border',
+      control: 'text',
+      defaultValue: '2px solid #2980b9',
+    },
+  },
+} as Meta<ButtonProps>;
 
-export const Simple = () => {
-  
-  const props: ButtonProps = {
-    border: number('Border width', 2) + 'px ' +  select('Border style', ['solid', 'dotted', 'dashed'], 'solid') + ' ' + color('Border color', '#2980b9'),
-    backgroundColor: color('Background color', '#3498db'),
-    color: color('Color', 'white'),
-    height: number('Height [px]', 60) + 'px',
-    radius: number('Radius [px]', 10) + 'px',
-    width: number('Width [px]', 200) + 'px',
-    children: text('Label', 'Text label'),
-    onClick: () => console.log('Clicked!'),
-  };
-
-  return <Button 
-    border = {props.border}
-    color = {props.color}
-    backgroundColor = {props.backgroundColor}
-    children = {props.children}
-    height = {props.height}
-    onClick = {props.onClick}
-    radius = {props.radius}
-    width = {props.width} />;
-};
+export const Default: Story<ButtonProps> = (props: ButtonProps) => (
+  <Button {...props} />
+);

@@ -27,6 +27,7 @@
   },
   "private": true,
   "dependencies": {
+    "@storybook/addon-essentials": "^6.2.9",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "gatsby": "2.32.3",
