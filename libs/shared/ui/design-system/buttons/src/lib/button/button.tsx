@@ -6,9 +6,10 @@ export interface ButtonProps {
   color?: string;
   children?: React.ReactNode;
   height?: number;
-  onClick?: () => void;
   radius?: number;
   width?: number;
+  onClick?: () => void;
+  onHover?: () => void;
 }
 
 const initProps: ButtonProps = {
@@ -24,6 +25,7 @@ export function Button(props = initProps) {
   return (
     <button
       onClick={props.onClick}
+      onMouseEnter={props.onHover}
       style={{
         backgroundColor: props.backgroundColor,
         border: props.border,

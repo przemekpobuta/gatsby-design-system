@@ -9,7 +9,8 @@ export default {
   component: Button,
   title: 'Button',
   args: {
-    onClick: action('clicked'),
+    onClick: action('clicked button'),
+    onHover: action('hover on button'),
   },
   argTypes: {
     children: { name: 'Label', control: 'text', defaultValue: 'Text value' },
